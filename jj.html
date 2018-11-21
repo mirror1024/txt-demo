@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!-- import CSS -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<style>
+			#div_card_add_list .el-card__header {
+				padding: 10px;
+			}
+			
+			.el-button {
+				margin: 1px!important;
+			}
+			
+			.el-card {
+				margin: 10px 0;
+			}
+			
+			.shang_box {
+				width: 540px;
+				height: 540px;
+				padding: 10px;
+				background-color: #fff;
+				border-radius: 10px;
+				position: fixed;
+				z-index: 1000;
+				left: 50%;
+				top: 50%;
+				margin-left: -280px;
+				margin-top: -280px;
+				border: 1px dotted #dedede;
+			}
+			
+			.shang_box img {
+				border: none;
+				border-width: 0;
+			}
+			
+			.dashang {
+				display: block;
+				width: 100px;
+				margin: 5px auto;
+				height: 25px;
+				line-height: 25px;
+				padding: 10px;
+				background-color: #E74851;
+				color: #fff;
+				text-align: center;
+				text-decoration: none;
+				border-radius: 10px;
+				font-weight: bold;
+				font-size: 16px;
+				transition: all 0.3s;
+			}
+			
+			.dashang:hover {
+				opacity: 0.8;
+				padding: 15px;
+				font-size: 18px;
+			}
+			
+			.shang_close {
+				float: right;
+				display: inline-block;
+			}
+			
+			.shang_logo {
+				display: block;
+				text-align: center;
+				margin: 20px auto;
+			}
+			
+			.shang_tit {
+				width: 100%;
+				height: 75px;
+				text-align: center;
+				line-height: 66px;
+				color: #a3a3a3;
+				font-size: 16px;
+				background: url('img/cy-reward-title-bg.jpg');
+				font-family: 'Microsoft YaHei';
+				margin-top: 7px;
+				margin-right: 2px;
+			}
+			
+			.shang_tit p {
+				color: #a3a3a3;
+				text-align: center;
+				font-size: 16px;
+			}
+			
+			.shang_payimg {
+				width: 140px;
+				border: 6px solid #EA5F00;
+				margin: 0 auto;
+				border-radius: 3px;
+				height: 140px;
+			}
+			
+			.shang_payimg img {
+				display: block;
+				text-align: center;
+				width: 128px;
+				height: 128px;
+			}
+			
+			.pay_explain {
+				text-align: center;
+				margin: 10px auto;
+				font-size: 12px;
+				color: #545454;
+			}
+			
+			.radiobox {
+				width: 16px;
+				height: 16px;
+				background: url('img/radio2.jpg');
+				display: block;
+				float: left;
+				margin-top: 5px;
+				margin-right: 14px;
+			}
+			
+			.checked .radiobox {
+				background: url('img/radio1.jpg');
+			}
+			
+			.shang_payselect {
+				text-align: center;
+				margin: 0 auto;
+				margin-top: 40px;
+				cursor: pointer;
+				height: 60px;
+				width: 280px;
+			}
+			
+			.shang_payselect .pay_item {
+				display: inline-block;
+				margin-right: 10px;
+				float: left;
+			}
+			
+			.shang_info {
+				clear: both;
+			}
+			
+			.shang_info p,
+			.shang_info a {
+				color: #C3C3C3;
+				text-align: center;
+				font-size: 12px;
+				text-decoration: none;
+				line-height: 2em;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+
+			<el-dialog :visible.sync="showCodeBox" title="代码">
+				<p>{{showCodeBoxContent}}</p>
+			</el-dialog>
+
+			<el-row :gutter="24">
+				<!--左边-->
+				<el-col :span="18">
+					<div class="grid-content bg-purple">
+						<!--效果预览-->
+						<el-card class="box-card">
+							<div slot="header" class="clearfix">
+								<span>效果预览</span>
+							</div>
+							<!--预览box-->
+							<div id="box-preview"></div>
+							<!--/.预览box-->
+
+							<el-button type="primary" size="medium" @click="showMoneyBox=true" style="float: right;">点我试试</el-button>
+							<el-button type="primary" size="medium" @click="getCode" style="float: right;">查看代码</el-button>
+
+						</el-card>
+						<!--效果预览-->
+
+						<!--添加特效-->
+						<el-card class="box-card">
+							<div slot="header" class="clearfix">
+								<span>添加特效</span>
+							</div>
+
+							<el-form v-show="addCodeBoxShow" ref="form" :model="form" label-position="top">
+
+								<el-form-item v-show="addCodeBoxAttrs.background_color" label="背景颜色">
+									<el-col :span="12">
+										<el-input v-model="addCodeBoxAttrsDetails.background_color"></el-input>
+									</el-col>
+									<el-col :span="12">
+										<el-color-picker v-model="addCodeBoxAttrsDetails.background_color"></el-color-picker>
+									</el-col>
+								</el-form-item>
+
+								<el-form-item v-show="addCodeBoxAttrs.color" label="字体颜色">
+									<el-col :span="12">
+										<el-input v-model="addCodeBoxAttrsDetails.color"></el-input>
+									</el-col>
+									<el-col :span="12">
+										<el-color-picker v-model="addCodeBoxAttrsDetails.color"></el-color-picker>
+									</el-col>
+								</el-form-item>
+								
+								（更多颜色参考<a href="http://tool.c7sky.com/webcolor/" target="_blank">这里</a>)
+								
+								
+								<el-form-item v-show="addCodeBoxAttrs.font_size" label="字体大小（晋江默认14，可根据喜好决定大小 ...）">
+									<el-input v-model="addCodeBoxAttrsDetails.font_size"></el-input>
+								</el-form-item>
+
+								<el-form-item v-show="addCodeBoxAttrs.content" label="内容">
+									<el-input type="textarea" v-model="addCodeBoxAttrsDetails.content"></el-input>
+								</el-form-item>
+
+								<!--以上是公共的显示属性-->
+
+								<el-form-item v-show="addCodeBoxAttrs.url" label="链接（例子：http://www.baidu.com）">
+									<el-input v-model="addCodeBoxAttrsDetails.url"></el-input>
+								</el-form-item>
+
+								<el-form-item>
+									<el-button type="primary" style="float: right;" @click="addCodeBox">添加</el-button>
+									<el-button style="float: right;">重置</el-button>
+								</el-form-item>
+							</el-form>
+
+							<div v-show="!addCodeBoxShow">
+								<h4>请先在右侧列表选择特效</h4>
+							</div>
+
+						</el-card>
+						<!--添加特效-->
+
+					</div>
+				</el-col>
+				<!--/左边-->
+
+				<!--右边-->
+				<el-col :span="6">
+					<div class="grid-content bg-purple">
+
+						<el-card class="box-card">
+							<div slot="header" class="clearfix">
+								<span>已添加</span>
+							</div>
+							<div>
+								
+								<div v-for="item in htmlObjList">
+									<el-button type="danger" size="mini" @click="deleteDemoByCode(item.demoId)">删除</el-button>
+									{{item.htmlTypeName}}
+								</div>
+							 
+
+							</div>
+						</el-card>
+
+						<el-card class="box-card" header="效果列表" id="div_card_add_list">
+
+							<el-card class="box-card" shadow="hover" :body-style="{ padding: '10px' }">
+								<div slot="header" class="clearfix">
+									<span>1.跑马灯</span>
+									<el-button style="float: right; padding: 3px 0" type="text" @click="pickDemo(1)">添加</el-button>
+								</div>
+								<div>
+									<marquee>点波关注行不行？6666666</marquee>
+								</div>
+							</el-card>
+
+							<el-card class="box-card" shadow="hover" :body-style="{ padding: '10px' }">
+								<div slot="header" class="clearfix">
+									<span>2.友情链接</span>
+									<el-button style="float: right; padding: 3px 0" type="text" @click="pickDemo(2)">添加</el-button>
+								</div>
+								<div>
+									<a href="http://www.baidu.com" target="_blank" style="background:#f67676;width:100%;color: white;">点击就看《******》</a>
+								</div>
+							</el-card>
+
+							<el-card class="box-card" shadow="hover" :body-style="{ padding: '10px' }">
+								<div slot="header" class="clearfix">
+									<span>3.带背景色的大格子</span>
+									<el-button style="float: right; padding: 3px 0" type="text" @click="pickDemo(3)">添加</el-button>
+								</div>
+
+								<div>
+									<div style="background:#f67676;width:100%;color: white;">
+										<center>
+											你看，我是居中的
+										</center>
+									</div>
+								</div>
+							</el-card>
+
+							<el-card class="box-card" shadow="hover" :body-style="{ padding: '10px' }">
+								<div slot="header" class="clearfix">
+									<span>4.增加中……</span>
+								</div>
+							</el-card>
+
+						</el-card>
+
+					</div>
+				</el-col>
+				<!--/右边-->
+
+			</el-row>
+
+			<!--打赏box-->
+			<div v-show="showMoneyBox" class="shang_box">
+				<a class="shang_close" href="javascript:void(0)" @click="showMoneyBox=false" title="关闭"><img src="img/close.jpg" alt="取消"></a>
+				<div class="shang_tit">
+					<p>救救孩子，筹钱买服务器ing!</p>
+				</div>
+				<div class="shang_payimg">
+					<img src="img/alipayimg.jpg" alt="扫码支持" title="扫一扫">
+				</div>
+				<div class="pay_explain">千山万水都是情，打赏几分行不行！</div>
+				<div class="shang_payselect">
+					<div class="pay_item checked" data-id="alipay">
+						<span class="radiobox"></span>
+						<span class="pay_logo"><img src="img/alipay.jpg" alt="支付宝"></span>
+					</div>
+					<div class="pay_item" data-id="wechat">
+						<span class="radiobox"></span>
+						<span class="pay_logo"><img src="img/wechat.jpg" alt="微信"></span>
+					</div>
+				</div>
+				<div class="shang_info">
+					<p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+
+				</div>
+			</div>
+			
+			
+			<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1275418135'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/z_stat.php%3Fid%3D1275418135%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+		</div>
+	</body>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<!-- import Vue before Element -->
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<!-- import JavaScript -->
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+	<!-- import JavaScript -->
+	<script src="ele_index1.js"></script>
+
+</html>
