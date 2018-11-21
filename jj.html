@@ -5,6 +5,8 @@
 		<meta charset="UTF-8">
 		<!-- import CSS -->
 		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+		<link rel="stylesheet" href="http://static.jjwxc.net/css/channel_2010/index2010.css?ver=20180619">
 		<style>
 			#div_card_add_list .el-card__header {
 				padding: 10px;
@@ -171,11 +173,31 @@
 						<!--效果预览-->
 						<el-card class="box-card">
 							<div slot="header" class="clearfix">
-								<span>效果预览</span>
+								<span>效果预览（用了我爱豆母鸡的《图灵密码》当demo，ღ( ´･ᴗ･` )比心）</span>
 							</div>
-							<!--预览box-->
-							<div id="box-preview"></div>
-							<!--/.预览box-->
+
+							<table width="760" border="0" align="center" cellpadding="0" cellspacing="0" style="table-layout:fixed ">
+								<tbody>
+									<tr>
+										<td width="760" valign="top" class="readtd" style="width:760px;word-break:break-all;word-wrap:break-word">
+											<div class="tdtitle">文案
+											</div>
+											<div class="smallreadbody">
+												<img itemprop="image" src="http://wx3.sinaimg.cn/mw690/6c167ecegy1fupjgvqnmbj207l0aldk3.jpg" width="200" height="280" align="left">
+												<!--预览box-->
+												<div id="box-preview" itemprop="description">
+												
+												</div>
+												<!--/.预览box-->
+											</div>
+											<div class="smallreadbody"><span style="color:red">内容标签：</span>
+												<span><a style="text-decoration:none;color: red;" href="http://www.jjwxc.net/bookbase.php?bq19=19" target="_blank">强强</a></span>&nbsp;<span><a style="text-decoration:none;color: red;" href="http://www.jjwxc.net/bookbase.php?bq41=41" target="_blank">欢喜冤家</a></span>&nbsp;<span><a style="text-decoration:none;color: red;" href="http://www.jjwxc.net/bookbase.php?bq47=47" target="_blank">破镜重圆</a></span>&nbsp;<span><a style="text-decoration:none;color: red;" href="http://www.jjwxc.net/bookbase.php?bq52=52" target="_blank">天作之合</a></span> <br><br><span class="bluetext">搜索关键字：主角：闻天和、关越 ┃ 配角：江子蹇、佟凯、张秋、吴舜、普罗米修斯、闻天衡、闻天岳 ┃ 其它：</span></div><br>
+										</td>
+
+									</tr>
+								</tbody>
+							</table>
+							 
 
 							<el-button type="primary" size="medium" @click="showMoneyBox=true" style="float: right;">点我试试</el-button>
 							<el-button type="primary" size="medium" @click="getCode" style="float: right;">查看代码</el-button>
@@ -208,10 +230,10 @@
 										<el-color-picker v-model="addCodeBoxAttrsDetails.color"></el-color-picker>
 									</el-col>
 								</el-form-item>
-								
-								（更多颜色参考<a href="http://tool.c7sky.com/webcolor/" target="_blank">这里</a>)
-								
-								
+
+								（更多颜色参考
+								<a href="http://tool.c7sky.com/webcolor/" target="_blank">这里</a>)
+
 								<el-form-item v-show="addCodeBoxAttrs.font_size" label="字体大小（晋江默认14，可根据喜好决定大小 ...）">
 									<el-input v-model="addCodeBoxAttrsDetails.font_size"></el-input>
 								</el-form-item>
@@ -252,12 +274,11 @@
 								<span>已添加</span>
 							</div>
 							<div>
-								
+
 								<div v-for="item in htmlObjList">
 									<el-button type="danger" size="mini" @click="deleteDemoByCode(item.demoId)">删除</el-button>
 									{{item.htmlTypeName}}
 								</div>
-							 
 
 							</div>
 						</el-card>
@@ -338,9 +359,11 @@
 
 				</div>
 			</div>
-			
-			
-			<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1275418135'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/z_stat.php%3Fid%3D1275418135%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+			<script type="text/javascript">
+				var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+				document.write(unescape("%3Cspan id='cnzz_stat_icon_1275418135'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/z_stat.php%3Fid%3D1275418135%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+			</script>
 
 		</div>
 	</body>
