@@ -156,11 +156,18 @@
 				text-decoration: none;
 				line-height: 2em;
 			}
+			
+			
+			[v-cloak] {
+			  display: none;
+			}
+
+
 		</style>
 	</head>
 
 	<body>
-		<div id="app">
+		<div id="app" v-cloak>
 
 			<el-dialog :visible.sync="showCodeBox" title="代码">
 				<p>{{showCodeBoxContent}}</p>
