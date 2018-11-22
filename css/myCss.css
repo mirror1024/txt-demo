@@ -1,0 +1,27 @@
+[v-cloak] {
+	display: none;
+}
+
+.el-form-item {
+	margin-bottom: 1px;
+}
+
+.el-button {
+	margin: 1px!important;
+}
+
+.el-card {
+	margin: 10px 0;
+}
+
+.line {
+	border: 0.5px solid #e0e6ed;
+	margin: 5px 0;
+}
+
+body{
+	background-color: #fafafa!important;
+}
+.el-header {
+    padding: 0;
+}

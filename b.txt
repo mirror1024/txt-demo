@@ -1,0 +1,35 @@
+C:\Users\pc\Desktop\新建文件夹\a.bat
+C:\Users\pc\Desktop\新建文件夹\b.txt
+C:\Users\pc\Desktop\新建文件夹\古代
+C:\Users\pc\Desktop\新建文件夹\大纲
+C:\Users\pc\Desktop\新建文件夹\情节
+C:\Users\pc\Desktop\新建文件夹\玄幻
+C:\Users\pc\Desktop\新建文件夹\现代
+C:\Users\pc\Desktop\新建文件夹\经验
+C:\Users\pc\Desktop\新建文件夹\古代\古文写作要领.docx
+C:\Users\pc\Desktop\新建文件夹\古代\古言写作技法.docx
+C:\Users\pc\Desktop\新建文件夹\大纲\关于大纲模板的补充.docx
+C:\Users\pc\Desktop\新建文件夹\大纲\大纲和细纲（老书虫作者培训之五）.doc
+C:\Users\pc\Desktop\新建文件夹\大纲\大纲模板.doc
+C:\Users\pc\Desktop\新建文件夹\大纲\大纲模板.xlsx
+C:\Users\pc\Desktop\新建文件夹\大纲\大纲篇课件.txt
+C:\Users\pc\Desktop\新建文件夹\大纲\雪花法大纲.docx
+C:\Users\pc\Desktop\新建文件夹\情节\冲突与悬念.pdf
+C:\Users\pc\Desktop\新建文件夹\情节\卡文之有梗万事足.docx
+C:\Users\pc\Desktop\新建文件夹\情节\故事 罗伯特·麦基.pdf
+C:\Users\pc\Desktop\新建文件夹\情节\故事核.docx
+C:\Users\pc\Desktop\新建文件夹\情节\脑洞篇课件.txt
+C:\Users\pc\Desktop\新建文件夹\玄幻\《仙道口诀》（电子书 删节本）已出版 盛克琦点校.pdf
+C:\Users\pc\Desktop\新建文件夹\玄幻\玄幻仙侠类神兽妖兽素材.pdf
+C:\Users\pc\Desktop\新建文件夹\玄幻\玄幻小说丹药.pdf
+C:\Users\pc\Desktop\新建文件夹\玄幻\玄幻小说素材.pdf
+C:\Users\pc\Desktop\新建文件夹\玄幻\茅山精华集.pdf
+C:\Users\pc\Desktop\新建文件夹\现代\关于霸道总裁.docx
+C:\Users\pc\Desktop\新建文件夹\现代\学霸梗不正经不完全总结.docx
+C:\Users\pc\Desktop\新建文件夹\现代\言情--恋爱话术惯例.pdf
+C:\Users\pc\Desktop\新建文件夹\经验\小说创作之魂——欺骗术加催眠术 - 来源网络.doc
+C:\Users\pc\Desktop\新建文件夹\经验\投稿邮箱.pdf
+C:\Users\pc\Desktop\新建文件夹\经验\经验.xlsx
+C:\Users\pc\Desktop\新建文件夹\经验\给网文新人的成长辅导之基础篇.doc
+C:\Users\pc\Desktop\新建文件夹\经验\网文心得.pdf
+C:\Users\pc\Desktop\新建文件夹\经验\论小说代入感.doc
