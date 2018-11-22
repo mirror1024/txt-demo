@@ -175,7 +175,7 @@
 
 			<el-row :gutter="24">
 				<!--左边-->
-				<el-col :span="18">
+				<el-col :span="16">
 					<div class="grid-content bg-purple">
 						<!--效果预览-->
 						<el-card class="box-card">
@@ -217,7 +217,7 @@
 							<div slot="header" class="clearfix">
 								<span>添加特效</span>
 							</div>
-
+							<!--addCodeBoxShow-->
 							<el-form v-show="addCodeBoxShow" ref="form" :model="form" label-position="top">
 
 								<el-form-item v-show="addCodeBoxAttrs.background_color" label="背景颜色">
@@ -260,8 +260,38 @@
 									<el-button style="float: right;">重置</el-button>
 								</el-form-item>
 							</el-form>
+							<!--addCodeBoxShow-->
+							
+							
+							<!--addWeiboBoxShow-->
+							<el-form v-show="addWeiboBoxShow" ref="form" :model="form" label-position="top">
+								
+								教程：
+								电脑登陆新浪微博 ，打开http://app.weibo.com/tool/signature页面。
+								<img src="img/weibo.png"/>
+								<br/>
+								将复制出来的代码 贴到对应的地方。
+								<br/>
+								[url=<font color="red">http://weibo.com/u/3786625614?s=6uyXnP</font>][img]<font color="red">http://service.t.sina.com.cn/widget/qmd/3786625614/47b41e21/1.png</font>[/img][/url]
+								<el-form-item label="url（例子：http://weibo.com/u/3786625614?s=6uyXnP）">
+									<el-input v-model="addWeiboBoxAttrsDetails.url"></el-input>
+								</el-form-item>
+								<el-form-item label="img（例子：http://service.t.sina.com.cn/widget/qmd/3786625614/47b41e21/1.png）">
+									<el-input v-model="addWeiboBoxAttrsDetails.img"></el-input>
+								</el-form-item>
 
-							<div v-show="!addCodeBoxShow">
+								<el-form-item>
+									<el-button type="primary" style="float: right;" @click="addWeiboBox">添加</el-button>
+									<el-button style="float: right;">重置</el-button>
+								</el-form-item>
+							</el-form>
+							<!--addWeiboBoxShow-->
+							
+							
+							
+							
+
+							<div v-show="!(addCodeBoxShow||addWeiboBoxShow)">
 								<h4>请先在右侧列表选择特效</h4>
 							</div>
 
@@ -273,7 +303,7 @@
 				<!--/左边-->
 
 				<!--右边-->
-				<el-col :span="6">
+				<el-col :span="8">
 					<div class="grid-content bg-purple">
 
 						<el-card class="box-card">
@@ -326,11 +356,34 @@
 									</div>
 								</div>
 							</el-card>
+							
+							<!--微博缩略图-->
+							<el-card class="box-card" shadow="hover" :body-style="{ padding: '10px' }">
+								<div slot="header" class="clearfix">
+									<span>4.微博缩略图</span>
+									<el-button style="float: right; padding: 3px 0" type="text" @click="pickWeiBo">添加</el-button>
+								</div>
+
+								<div>
+									
+									
+									<!--[url=http://weibo.com/u/3786625614?s=6uyXnP][img]http://service.t.sina.com.cn/widget/qmd/3786625614/47b41e21/1.png[/img][/url]-->
+									
+									
+									
+									<a href="http://weibo.com/u/3786625614?s=6uyXnP" target="_blank"><img border="0" src="http://service.t.sina.com.cn/widget/qmd/3786625614/47b41e21/1.png"></a>
+									
+									
+								</div>
+							</el-card>
+							<!--微博缩略图-->
+							
 
 							<el-card class="box-card" shadow="hover" :body-style="{ padding: '10px' }">
 								<div slot="header" class="clearfix">
-									<span>4.增加中……</span>
+									<span>增加中……</span>
 								</div>
+								有需求直接微博私信我~
 							</el-card>
 
 						</el-card>
