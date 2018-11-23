@@ -393,6 +393,20 @@ var vm = new Vue({
 						"startDate": "2018-01-01",
 						"endDate": ""
 					}]
+				},
+				{
+					"userName": "青瑜娑",
+					books: [{
+						"bookName": "《返魂》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3932969",
+						"startDate": "2018-11-22",
+						"endDate": ""
+					},{
+						"bookName": "《[综英美]黑魔王洗白计划》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3933898",
+						"startDate": "2018-11-22",
+						"endDate": ""
+					}]
 				}
 
 			]
