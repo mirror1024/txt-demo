@@ -4,6 +4,9 @@ var vm = new Vue({
 		return {
 			listType: '古代',
 			showFilesLis: [],
+			
+			endBooks:[],
+			unEndBooks:[],
 			FilesList: [{
 					userName: "痴非愚",
 					fileName: "古文写作要领.docx",
@@ -81,7 +84,6 @@ var vm = new Vue({
 					uploadDate: "2018-11-22"
 				},
 
-
 				{
 					userName: "痴非愚",
 					fileName: "《仙道口诀》（电子书 删节本）已出版 盛克琦点校.pdf",
@@ -109,9 +111,6 @@ var vm = new Vue({
 					fileType: "玄幻",
 					uploadDate: "2018-11-22"
 				},
-
-
-
 
 				{
 					userName: "痴非愚",
@@ -175,27 +174,199 @@ var vm = new Vue({
 
 			],
 
-			userList: [{
-					userName: "痴非愚",
+			userList: [
+				{
+					"userName": "秦嘉",
 					books: [{
-						bookName: "（快穿）炮灰也想要苏爽人生",
-						bookUrl: "http://www.jjwxc.net/onebook.php?novelid=3307706",
-						startDate: "2017-01-01",
-						endDate: "2018-05-05"
-
+						"bookName": "《多想成为你的鹿》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3648154",
+						"startDate": "2018-01-01",
+						"endDate": ""
+					}, {
+						"bookName": "《你要我的哪颗心》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3596430",
+						"startDate": "2018-01-01",
+						"endDate": "2018-11-23"
 					}]
-
 				},
 				{
-					userName: "沐小烦",
+					"userName": "六日瞳",
 					books: [{
-						bookName: "就想嫁个老实人",
-						bookUrl: "http://www.jjwxc.net/onebook.php?novelid=3507980",
-						startDate: "2017-01-01",
-						endDate: "2018-05-05"
-
+						"bookName": "《虐文真香警告（穿书）》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3728230",
+						"startDate": "2018-01-01",
+						"endDate": ""
+					}, {
+						"bookName": "《点击就看性感夫君在线挨打》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3580142",
+						"startDate": "2018-01-01",
+						"endDate": "2018-11-23"
 					}]
+				},
+				{
+					"userName": "叶不弯",
+					books: [{
+						"bookName": "《穿成大佬的白月光（穿书）》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3697604",
+						"startDate": "2018-01-01",
+						"endDate": ""
+					}, {
+						"bookName": "《女团C位上位日记》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3684405",
+						"startDate": "2018-01-01",
+						"endDate": "2018-11-23"
+					}]
+				},
+				{
+					"userName": "汉堡年糕",
+					books: [{
+						"bookName": "《万物留痕》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3596184",
+						"startDate": "2018-01-01",
+						"endDate": ""
+					}, {
+						"bookName": "《重生之银盘映霜刃》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3493550",
+						"startDate": "2018-01-01",
+						"endDate": "2018-11-23"
+					}]
+				},
+				{
+					"userName": "冰激凌真好吃",
+					books: [{
+						"bookName": "《书生总是嘴上说不要》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3614152",
+						"startDate": "2018-01-01",
+						"endDate": "2018-11-23"
+					}]
+				},
+				{
+					"userName": "水中素笠",
+					books: [{
+						"bookName": "《穿成龙傲天的炮灰妈》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3587151",
+						"startDate": "2018-01-01",
+						"endDate": "2018-11-23"
+					}]
+				},
+				{
+					"userName": "许菲云",
+					books: [{
+						"bookName": "《竹马太爱我》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3636597",
+						"startDate": "2018-01-01",
+						"endDate": ""
+					}, {
+						"bookName": "《穿成一只小奶猫后》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3628442",
+						"startDate": "2018-01-01",
+						"endDate": "2018-11-23"
+					}]
+				},
+				{
+					"userName": "鹌鹑崽",
+					books: [{
+						"bookName": "《九零年败家子》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3105286",
+						"startDate": "2018-01-01",
+						"endDate": "2018-11-23"
+					}]
+				},
+				{
+					"userName": "痴非愚",
+					books: [{
+						"bookName": "《长公主脱单指南》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3615120",
+						"startDate": "2018-01-01",
+						"endDate": ""
+					}, {
+						"bookName": "《（快穿）炮灰也想要苏爽人生》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3307706",
+						"startDate": "2018-01-01",
+						"endDate": "2018-11-23"
+					}]
+				},
+				{
+					"userName": "沐小烦",
+					books: [{
+						"bookName": "《就想嫁个老实人》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3507980",
+						"startDate": "2018-01-01",
+						"endDate": "2018-11-23"
+					}]
+				},
+				{
+					"userName": "皮胖",
+					books: [{
+						"bookName": "《圆梦系统送温暖》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3594488",
+						"startDate": "2018-01-01",
+						"endDate": "2018-11-23"
+					}]
+				},
+				{
+					"userName": "戈多糖",
+					books: [{
+						"bookName": "《今日宜喜欢你》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3603884",
+						"startDate": "2018-01-01",
+						"endDate": "2018-11-23"
+					}]
+				},
+				{
+					"userName": "桃叶步",
+					books: [{
+						"bookName": "《我在大唐搞事情》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3219386",
+						"startDate": "2018-01-01",
+						"endDate": "2018-11-23"
+					}]
+				},
+				{
+					"userName": "苏湉",
+					books: [{
+						"bookName": "《秦时明月之天赐良缘》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3469281",
+						"startDate": "2018-01-01",
+						"endDate": "2018-11-23"
+					}]
+				},
 
+				{
+					"userName": "风月作笔",
+					books: [{
+						"bookName": "《虐渣女工，持证上岗（快穿）》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3856686",
+						"startDate": "2018-01-01",
+						"endDate": ""
+					}]
+				},
+				{
+					"userName": "万俟将将",
+					books: [{
+						"bookName": "《重生延禧攻略之继后难为》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3852211",
+						"startDate": "2018-01-01",
+						"endDate": ""
+					}]
+				},
+				{
+					"userName": "我村",
+					books: [{
+						"bookName": "《西宫凉如月》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3860018",
+						"startDate": "2018-01-01",
+						"endDate": ""
+					}, ]
+				},
+				{
+					"userName": "敏初",
+					books: [{
+						"bookName": "《但愿人长久》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3867028",
+						"startDate": "2018-01-01",
+						"endDate": ""
+					}]
 				}
 
 			]
@@ -203,36 +374,33 @@ var vm = new Vue({
 	},
 	mounted: function() {
 		this.loadFilesListByType('古代');
+		this.loadBookLIst();
 
 	},
 
 	methods: {
 		handleClick(tab, event) {
 			var type = tab.name;
-			console.log(type);
 			this.loadFilesListByType(type);
 		},
 		loadFilesListByType(type) {
 			var _this = this;
 			var showFilesLis = [];
 			this.FilesList.forEach(function(value, index, array) {
-				console.log(value, index);
-				if (value.fileType == type) {
+				if(value.fileType == type) {
 					showFilesLis.push(value);
 				}
 			});
 			// 填充user
 			showFilesLis.forEach(function(value, index, array) {
 				_this.userList.forEach(function(uservalue) {
-					if (uservalue.userName == value.userName) {
+					if(uservalue.userName == value.userName) {
 						value.bookName = uservalue.books[0].bookName;
 						value.bookUrl = uservalue.books[0].bookUrl;
 					}
 				});
 			});
 
-
-			console.log(showFilesLis)
 			this.showFilesLis = showFilesLis;
 		},
 		downLoadFile(item) {
@@ -241,9 +409,30 @@ var vm = new Vue({
 			var file = item.fileType + `/` + item.fileName;
 
 			url = url + file;
-			console.log(url)
+
 			window.open(url);
 
+		},
+
+		loadBookLIst() {
+			var _this = this;
+			var endBooks = [];
+			var unEndBooks = [];
+			this.userList.forEach(function(value, index, array) {
+
+				value.books.forEach(function(bookIten) {
+					bookIten.userName=value.userName;
+					if(bookIten.endDate) {
+						endBooks.push(bookIten)
+					} else {
+						unEndBooks.push(bookIten)
+					}
+				});
+
+			});
+
+			_this.endBooks=endBooks;
+			_this.unEndBooks=unEndBooks;
 		}
 	}
-})
+});

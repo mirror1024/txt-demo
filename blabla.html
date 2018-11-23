@@ -14,8 +14,7 @@
 			<el-container>
 				<el-header>
 
-					<el-menu default-active="1" class="el-menu-demo" mode="horizontal" background-color="#545c64" text-color="#fff"
-					 active-text-color="#ffd04b">
+					<el-menu default-active="1" class="el-menu-demo" mode="horizontal" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
 						<el-menu-item index="1">首页</el-menu-item>
 						<el-menu-item index="2">
 							<a href="http://mirror1024.github.io/txt.demo/jj.html" target="_blank">晋江小工具</a>
@@ -37,8 +36,7 @@
 									<i class="el-icon-warning"></i><span>群规定</span>
 								</div>
 								<div>
-									为了更好地督促大家码字，年底会再大清理一遍，deadline是12月31日24:00，到时候以八月为界限，
-									八月后（包括八月）进群的，需要交三万字，如果是从未动过笔的萌新，大纲资料和笔记的字数也算在内，其他人不许调皮不要放松自己； 八月前进群的，不管是不是萌新，均需交至少三万正文字数，如果觉得自己做不到，现在就可以退了。
+									为了更好地督促大家码字，年底会再大清理一遍，deadline是12月31日24:00，到时候以八月为界限， 八月后（包括八月）进群的，需要交三万字，如果是从未动过笔的萌新，大纲资料和笔记的字数也算在内，其他人不许调皮不要放松自己； 八月前进群的，不管是不是萌新，均需交至少三万正文字数，如果觉得自己做不到，现在就可以退了。
 									<br /> 请假在备考和复习的同学们，记好自己的回归日期，你们也在考核范围内，要求是5000到一万，资料也算，至少证明你们心里记着这事，没有放弃。 现在离年底还有三个半月，我相信大家抽得出时间写这几千几万字。
 									<br /> 最后，祝大家都能“金榜”题名～
 
@@ -51,10 +49,10 @@
 								</div>
 								<div>
 									为了大家的共同进步和发展，鼓励大家将自己手上的精品资料进行共享。同样的，也将会在每一条资料后面标注出共享人的作品进行宣传。
-									<br /> 共享方式——将资料通过邮件附件的形式发送到mirror_xjt@163.com，同时标注“笔名”“作品名”“作品链接”。
+									<br /> 共享方式——将资料通过邮件附件的形式发送到mirror_xtj@163.com，同时标注“笔名”“作品名”“作品链接”。
 									<br />
 									<div class="line"></div>
-									同时，有新作发表、旧作完结的朋友们也请通过邮件的形式发送到mirror_xjt@163.com，标注“笔名”“作品名”“作品链接”，会根据时间进行作品展示。
+									同时，有新作发表、旧作完结的朋友们也请通过邮件的形式发送到mirror_xtj@163.com，标注“笔名”“作品名”“作品链接”，会根据时间进行作品展示。
 									<br /> 入V的朋友请在入V三天前发送邮件提醒，网站将在右上角进行3天的大图宣传。
 								</div>
 							</el-card>
@@ -78,10 +76,9 @@
 								<el-table-column prop="fileName" label="内容">
 								</el-table-column>
 
-
 								<el-table-column label="操作" width="100">
 									<template slot-scope="scope">
-										<el-button type="text" size="small" 	@click="downLoadFile(scope.row)">下载</el-button>
+										<el-button type="text" size="small" @click="downLoadFile(scope.row)">下载</el-button>
 									</template>
 								</el-table-column>
 
@@ -90,11 +87,9 @@
 									<template slot-scope="scope">
 
 										<p>{{ scope.row.userName }}</p>
-										<a :href="scope.row.bookUrl" target="_blank"> {{ scope.row.bookName }}</a>
-									 
+										<a class="a-book" :href="scope.row.bookUrl" target="_blank"> {{ scope.row.bookName }}</a>
 
 									</template>
-
 
 								</el-table-column>
 							</el-table>
@@ -127,8 +122,8 @@
 							<div slot="header" class="clearfix">
 								<i class="el-icon-edit-outline"></i><span>最近发表</span>
 							</div>
-							<div v-for="o in 4" :key="o" class="text item">
-								<a href="http://www.baidu.com">{{"网站-书名-作者名 2018-11-" + o }}</a>
+							<div v-for="o in unEndBooks" :key="o" class="text item">
+								<a class="a-book" :href="o.bookUrl" target="_blank">{{o.bookName+'-'+o.userName }}</a>
 							</div>
 						</el-card>
 						<!--最近发表-->
@@ -137,8 +132,8 @@
 							<div slot="header" class="clearfix">
 								<i class="el-icon-time"></i><span>最近完结</span>
 							</div>
-							<div v-for="o in 10" :key="o" class="text item">
-								<a href="http://www.baidu.com">{{"网站-书名-作者名 2018-11-" + o }}</a>
+							<div v-for="o in endBooks" class="text item">
+								<a class="a-book" :href="o.bookUrl" target="_blank">{{o.bookName+'-'+o.userName }}</a>
 							</div>
 						</el-card>
 						<!--最近完结-->
