@@ -248,6 +248,14 @@ var vm = new Vue({
 						"startDate": "2018-01-01",
 						"endDate": "2018-11-23"
 					}]
+				},{
+					"userName": "山大竹子",
+					books: [{
+						"bookName": "《我一定要活过这一集》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3902864",
+						"startDate": "2018-11-01",
+						"endDate": ""
+					}]
 				},
 				{
 					"userName": "许菲云",
@@ -364,6 +372,24 @@ var vm = new Vue({
 					books: [{
 						"bookName": "《但愿人长久》",
 						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3867028",
+						"startDate": "2018-01-01",
+						"endDate": ""
+					}]
+				},
+				{
+					"userName": "子规啼雪",
+					books: [{
+						"bookName": "《润玉传之半城风月》",
+						"bookUrl": "http://www.jjwxc.net/onebook.php?novelid=3863836",
+						"startDate": "2018-01-01",
+						"endDate": ""
+					}]
+				},
+				{
+					"userName": "蜜糖糕",
+					books: [{
+						"bookName": "《花无重开》",
+						"bookUrl": "http://xwz333.lofter.com/post/1edf74e1_12b957403",
 						"startDate": "2018-01-01",
 						"endDate": ""
 					}]
