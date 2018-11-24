@@ -22,15 +22,17 @@
 						<el-menu-item index="3">
 							<a href="http://www.xuanpai.com/tool/names" target="_blank">玄派自动取名</a>
 						</el-menu-item>
-						
+
 						<el-menu-item index="4">
 							<a href="https://docs.qq.com/doc/DVVBzb2hUYnRLUkRB" target="_blank">在线心得分享</a>
 						</el-menu-item>
 						<el-menu-item index="5">
 							<a href="https://docs.qq.com/doc/DUk56anpacHZsdmNO" target="_blank">晋江Q&A</a>
 						</el-menu-item>
-						
-						
+
+						<el-menu-item index="6">
+							<a href="https://docs.qq.com/doc/DUklaTEp3WWVXWW9l" target="_blank">历史群公告</a>
+						</el-menu-item>
 					</el-menu>
 
 				</el-header>
@@ -43,6 +45,39 @@
 							<el-card class="box-card">
 								<div slot="header" class="clearfix">
 									<i class="el-icon-warning"></i><span>群规定</span>
+									<el-button style="float: right;" type="text" class="button" @click="dialogUserListVisible = true">成员名单</el-button>
+
+									<el-dialog :title="'成员名单-'+userList.length+'人，等你加入~'" :visible.sync="dialogUserListVisible">
+										<el-table :data="userList">
+
+											<el-table-column label="姓名" width="200">
+												<template slot-scope="scope">
+													<div>{{scope.row.userName|getPinYIn }}</div>
+													
+												</template>
+												
+											</el-table-column>
+											
+
+											<el-table-column label="作品">
+												<template slot-scope="scope">
+													<div v-for="item in scope.row.books">
+														<a class="a-book" :href="item.bookUrl" target="_blank"> {{item.bookName}}({{ item.endDate?"已完结":"连载中" }})</a>
+													</div>
+
+												</template>
+
+											</el-table-column>
+											
+											<el-table-column label="完成字数">
+												<template slot-scope="scope">
+													 暂未统计
+												</template>
+											
+											</el-table-column>
+										</el-table>
+									</el-dialog>
+
 								</div>
 								<div>
 									为了更好地督促大家码字，年底会再大清理一遍，deadline是12月31日24:00，到时候以八月为界限， 八月后（包括八月）进群的，需要交三万字，如果是从未动过笔的萌新，大纲资料和笔记的字数也算在内，其他人不许调皮不要放松自己； 八月前进群的，不管是不是萌新，均需交至少三万正文字数，如果觉得自己做不到，现在就可以退了。
@@ -153,10 +188,12 @@
 
 			</el-container>
 		</div>
-		
-		<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1275418135'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/z_stat.php%3Fid%3D1275418135%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
-		
-		
+
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_1275418135'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/z_stat.php%3Fid%3D1275418135%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+
 	</body>
 	<!-- import Vue before Element -->
 	<script src="https://unpkg.com/vue/dist/vue.js"></script>
