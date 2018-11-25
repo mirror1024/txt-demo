@@ -71,7 +71,7 @@
 											
 											<el-table-column label="完成字数">
 												<template slot-scope="scope">
-													 暂未统计
+													 <div>{{scope.row.sumnum }}</div>
 												</template>
 											
 											</el-table-column>
@@ -132,7 +132,7 @@
 
 									<template slot-scope="scope">
 
-										<p>{{ scope.row.userName }}</p>
+										{{ scope.row.userName }}<br/>
 										<a class="a-book" :href="scope.row.bookUrl" target="_blank"> {{ scope.row.bookName }}</a>
 
 									</template>
