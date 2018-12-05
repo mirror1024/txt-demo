@@ -229,6 +229,17 @@
 									</el-col>
 								</el-form-item>
 
+
+								<el-form-item v-show="addCodeBoxAttrs.border_color" label="边框">
+									<el-col :span="12">
+										<el-input v-model="addCodeBoxAttrsDetails.border_color"></el-input>
+									</el-col>
+									<el-col :span="12">
+										<el-color-picker v-model="addCodeBoxAttrsDetails.border_color"></el-color-picker>
+									</el-col>
+								</el-form-item>
+								
+								
 								（更多颜色参考
 								<a href="http://tool.c7sky.com/webcolor/" target="_blank">这里</a>)
 
@@ -245,6 +256,13 @@
 								<el-form-item v-show="addCodeBoxAttrs.url" label="链接（例子：http://www.baidu.com）">
 									<el-input v-model="addCodeBoxAttrsDetails.url"></el-input>
 								</el-form-item>
+								
+								<el-form-item v-show="addCodeBoxAttrs.title" label="标题">
+									<el-input v-model="addCodeBoxAttrsDetails.title"></el-input>
+								</el-form-item>
+
+
+
 
 								<el-form-item>
 									<el-button type="primary" style="float: right;" @click="addCodeBox">添加</el-button>
@@ -356,20 +374,53 @@
 								</div>
 
 								<div>
-									
-									
 									<!--[url=http://weibo.com/u/3786625614?s=6uyXnP][img]http://service.t.sina.com.cn/widget/qmd/3786625614/47b41e21/1.png[/img][/url]-->
-									
-									
-									
 									<a href="http://weibo.com/u/3786625614?s=6uyXnP" target="_blank"><img border="0" src="http://service.t.sina.com.cn/widget/qmd/3786625614/47b41e21/1.png"></a>
-									
-									
 								</div>
 							</el-card>
 							<!--微博缩略图-->
 							
+							
+							
+							<el-card class="box-card" shadow="hover" :body-style="{ padding: '10px' }">
+								<div slot="header" class="clearfix">
+									<span>5.带标题的边框</span>
+									<el-button style="float: right; padding: 3px 0" type="text" @click="pickDemo(5)">添加</el-button>
+								</div>
 
+								<div>
+									<fieldset style="border: 1px solid; color: #f67676;border-color: #f67676;">
+										<legend align="center" >我是标题标题</legend>我是内容内容内容 
+									</fieldset>
+								</div>
+							</el-card>
+							
+							
+							
+							<el-card class="box-card" shadow="hover" :body-style="{ padding: '10px' }">
+								<div slot="header" class="clearfix">
+									<span>6.竖向标题边框</span>
+									<el-button style="float: right; padding: 3px 0" type="text" @click="pickDemo(6)">添加</el-button>
+								</div>
+
+								<div>
+									<table style="width: 100%;">
+										<tbody>
+											<tr>
+												<td style="background-color:#f67676; padding:10px;width: 1em;"><font color="white">我是标题</font></td>
+												<td style="border:1px; border-style:dashed;border-color:#f67676;padding:10px;">顶顶顶顶顶顶顶顶顶顶</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</el-card>
+							
+							
+							
+							
+							
+							<!--<table style="border:1px;"><tbody><tr><td style="border:0px; background-color:#f67676; padding:10px;"><font color="white"><br>友<br>情<br>提<br>醒<br><br></font></td><td style="border:1px; border-style:dashed;border-color:#f67676;width:680px;padding:10px;"><font color="#f67676">这个表格代码为：</font><br><br>&lt;table style="border:1px;"&gt;<br>&lt;tr&gt;<br>&lt;td style="border:0px; background-color:颜色代码; padding:10px;"&gt;<br>&lt;font color=white&gt;&lt;br&gt;填&lt;br&gt;写&lt;br&gt;文&lt;br&gt;字&lt;br&gt;&lt;br&gt;&lt;/font&gt;<br>&lt;/td&gt;<br>&lt;td style="border:1px; border-style:边框样式;border-color:颜色代码;width:宽度;padding:10px;"&gt;<br>此处填写内容。<br><font color="#f67676">颜色代码见第三章;边框样式可以可以填写：solid(实线),dashed(虚线),dotted(点),outset(突出);宽度最宽680px。</font><br>&lt;/td&gt;<br>&lt;/tr&gt;<br>&lt;/table&gt;</td></tr></tbody></table>-->
+				
 							<el-card class="box-card" shadow="hover" :body-style="{ padding: '10px' }">
 								<div slot="header" class="clearfix">
 									<span>增加中……</span>
