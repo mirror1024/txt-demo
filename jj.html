@@ -152,6 +152,10 @@
 				line-height: 2em;
 			}
 			
+			.el-form--label-top .el-form-item__label {
+				padding: 0px;
+			}
+			
 			
 
 		</style>
@@ -197,7 +201,7 @@
 							</table>
 							 
 							<div class="line"></div>
-							<el-button type="primary" size="medium" @click="showMoneyBox=true" style="float: right;">点我试试</el-button>
+							<el-button type="primary" size="medium" @click="showMoneyBox=true" style="float: right;">打赏一分</el-button>
 							<el-button type="primary" size="medium" @click="getCode" style="float: right;">查看代码</el-button>
 
 						</el-card>
@@ -241,7 +245,7 @@
 								
 								
 								（更多颜色参考
-								<a href="http://tool.c7sky.com/webcolor/" target="_blank">这里</a>)
+								<a href="http://tool.c7sky.com/webcolor/" target="_blank">点这里配色表</a>，直接将你喜欢的颜色粘贴到文本框中，例如：【#FF9999】，颜色会自动带出。注意！一定要带【#】！)
 
 								<el-form-item v-show="addCodeBoxAttrs.font_size" label="字体大小（晋江默认14，可根据喜好决定大小 ...）">
 									<el-input v-model="addCodeBoxAttrsDetails.font_size"></el-input>
