@@ -13,8 +13,6 @@
 				padding: 10px;
 			}
 			
-			
-			
 			.shang_box {
 				width: 540px;
 				height: 540px;
@@ -156,8 +154,10 @@
 				padding: 0px;
 			}
 			
-			
-
+			.img-ad {
+				/*height: 90px;*/
+				width: 100%;
+			}
 		</style>
 	</head>
 
@@ -188,7 +188,7 @@
 												<img itemprop="image" src="http://wx3.sinaimg.cn/mw690/6c167ecegy1fupjgvqnmbj207l0aldk3.jpg" width="200" height="280" align="left">
 												<!--预览box-->
 												<div id="box-preview" itemprop="description">
-												
+
 												</div>
 												<!--/.预览box-->
 											</div>
@@ -199,7 +199,7 @@
 									</tr>
 								</tbody>
 							</table>
-							 
+
 							<div class="line"></div>
 							<el-button type="primary" size="medium" @click="showMoneyBox=true" style="float: right;">打赏一分</el-button>
 							<el-button type="primary" size="medium" @click="getCode" style="float: right;">查看代码</el-button>
@@ -233,7 +233,6 @@
 									</el-col>
 								</el-form-item>
 
-
 								<el-form-item v-show="addCodeBoxAttrs.border_color" label="边框">
 									<el-col :span="12">
 										<el-input v-model="addCodeBoxAttrsDetails.border_color"></el-input>
@@ -242,8 +241,7 @@
 										<el-color-picker v-model="addCodeBoxAttrsDetails.border_color"></el-color-picker>
 									</el-col>
 								</el-form-item>
-								
-								
+
 								（更多颜色参考
 								<a href="http://tool.c7sky.com/webcolor/" target="_blank">点这里配色表</a>，直接将你喜欢的颜色粘贴到文本框中，例如：【#FF9999】，颜色会自动带出。注意！一定要带【#】！)
 
@@ -260,13 +258,10 @@
 								<el-form-item v-show="addCodeBoxAttrs.url" label="链接（例子：http://www.baidu.com）">
 									<el-input v-model="addCodeBoxAttrsDetails.url"></el-input>
 								</el-form-item>
-								
+
 								<el-form-item v-show="addCodeBoxAttrs.title" label="标题">
 									<el-input v-model="addCodeBoxAttrsDetails.title"></el-input>
 								</el-form-item>
-
-
-
 
 								<el-form-item>
 									<el-button type="primary" style="float: right;" @click="addCodeBox">添加</el-button>
@@ -274,18 +269,16 @@
 								</el-form-item>
 							</el-form>
 							<!--addCodeBoxShow-->
-							
-							
+
 							<!--addWeiboBoxShow-->
 							<el-form v-show="addWeiboBoxShow" ref="form" :model="form" label-position="top">
-								
-								教程：
-								电脑登陆新浪微博 ，打开http://app.weibo.com/tool/signature页面。
-								<img src="img/weibo.png"/>
-								<br/>
-								将复制出来的代码 贴到对应的地方。
-								<br/>
-								[url=<font color="red">http://weibo.com/u/3786625614?s=6uyXnP</font>][img]<font color="red">http://service.t.sina.com.cn/widget/qmd/3786625614/47b41e21/1.png</font>[/img][/url]
+
+								教程： 电脑登陆新浪微博 ，打开http://app.weibo.com/tool/signature页面。
+								<img src="img/weibo.png" />
+								<br/> 将复制出来的代码 贴到对应的地方。
+								<br/> [url=
+								<font color="red">http://weibo.com/u/3786625614?s=6uyXnP</font>][img]
+								<font color="red">http://service.t.sina.com.cn/widget/qmd/3786625614/47b41e21/1.png</font>[/img][/url]
 								<el-form-item label="url（例子：http://weibo.com/u/3786625614?s=6uyXnP）">
 									<el-input v-model="addWeiboBoxAttrsDetails.url"></el-input>
 								</el-form-item>
@@ -299,10 +292,6 @@
 								</el-form-item>
 							</el-form>
 							<!--addWeiboBoxShow-->
-							
-							
-							
-							
 
 							<div v-show="!(addCodeBoxShow||addWeiboBoxShow)">
 								<h4>请先在右侧列表选择特效</h4>
@@ -317,6 +306,13 @@
 
 				<!--右边-->
 				<el-col :span="8">
+
+					<el-carousel trigger="click" height="180px">
+						<el-carousel-item v-for="item in ADlist" :key="item">
+							<a :href="item.web_url" target="_blank"><img class="img-ad" :src="item.img_url" /></a>
+						</el-carousel-item>
+					</el-carousel>
+
 					<div class="grid-content bg-purple">
 
 						<el-card class="box-card">
@@ -369,7 +365,7 @@
 									</div>
 								</div>
 							</el-card>
-							
+
 							<!--微博缩略图-->
 							<el-card class="box-card" shadow="hover" :body-style="{ padding: '10px' }">
 								<div slot="header" class="clearfix">
@@ -383,9 +379,7 @@
 								</div>
 							</el-card>
 							<!--微博缩略图-->
-							
-							
-							
+
 							<el-card class="box-card" shadow="hover" :body-style="{ padding: '10px' }">
 								<div slot="header" class="clearfix">
 									<span>5.带标题的边框</span>
@@ -394,13 +388,11 @@
 
 								<div>
 									<fieldset style="border: 1px solid; color: #f67676;border-color: #f67676;">
-										<legend align="center" >我是标题标题</legend>我是内容内容内容 
+										<legend align="center">我是标题标题</legend>我是内容内容内容
 									</fieldset>
 								</div>
 							</el-card>
-							
-							
-							
+
 							<el-card class="box-card" shadow="hover" :body-style="{ padding: '10px' }">
 								<div slot="header" class="clearfix">
 									<span>6.竖向标题边框</span>
@@ -411,20 +403,18 @@
 									<table style="width: 100%;">
 										<tbody>
 											<tr>
-												<td style="background-color:#f67676; padding:10px;width: 1em;"><font color="white">我是标题</font></td>
+												<td style="background-color:#f67676; padding:10px;width: 1em;">
+													<font color="white">我是标题</font>
+												</td>
 												<td style="border:1px; border-style:dashed;border-color:#f67676;padding:10px;">顶顶顶顶顶顶顶顶顶顶</td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
 							</el-card>
-							
-							
-							
-							
-							
+
 							<!--<table style="border:1px;"><tbody><tr><td style="border:0px; background-color:#f67676; padding:10px;"><font color="white"><br>友<br>情<br>提<br>醒<br><br></font></td><td style="border:1px; border-style:dashed;border-color:#f67676;width:680px;padding:10px;"><font color="#f67676">这个表格代码为：</font><br><br>&lt;table style="border:1px;"&gt;<br>&lt;tr&gt;<br>&lt;td style="border:0px; background-color:颜色代码; padding:10px;"&gt;<br>&lt;font color=white&gt;&lt;br&gt;填&lt;br&gt;写&lt;br&gt;文&lt;br&gt;字&lt;br&gt;&lt;br&gt;&lt;/font&gt;<br>&lt;/td&gt;<br>&lt;td style="border:1px; border-style:边框样式;border-color:颜色代码;width:宽度;padding:10px;"&gt;<br>此处填写内容。<br><font color="#f67676">颜色代码见第三章;边框样式可以可以填写：solid(实线),dashed(虚线),dotted(点),outset(突出);宽度最宽680px。</font><br>&lt;/td&gt;<br>&lt;/tr&gt;<br>&lt;/table&gt;</td></tr></tbody></table>-->
-				
+
 							<el-card class="box-card" shadow="hover" :body-style="{ padding: '10px' }">
 								<div slot="header" class="clearfix">
 									<span>增加中……</span>
@@ -481,6 +471,6 @@
 	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 
 	<!-- import JavaScript -->
-	<script src="ele_index1.js"></script>
+	<script src="ele_index.js"></script>
 
 </html>
